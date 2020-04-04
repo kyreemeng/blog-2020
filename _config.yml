@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: 清和
+subtitle: 记录生活,独立思考
+description: 一个会点前端的PM
+keywords: 清和,Madsen清和,孟庆豪
+author: 清和
+language: zh-CN
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://datalearn.top/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -90,6 +90,28 @@ include:
 exclude:
 ignore:
 
+#douban
+douban:
+  user: dreamhaoo
+  builtin: true
+  book:
+    title: '读过的书'
+    quote: '读书明智'
+  movie:
+    title: '看过的电影'
+    quote: '流金岁月'
+  timeout: 10000
+
+#搜索
+search:
+  path: search.xml
+  field: post
+  content: true
+
+# music
+aplayer:
+  meting: true
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -98,4 +120,27 @@ theme: Butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/iDreamHao/iDreamHao.github.io.git
+  branch: master
+
+# offline config passed to sw-precache.
+# offline:
+#   maximumFileSizeToCacheInBytes: 10485760 # 緩存的最大文件大小，以字節為單位
+#   staticFileGlobs:
+#     - public/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}
+#   # 靜態文件合集，如果你的站點使用了例如webp格式的文件，請將文件類型添加進去。
+#   stripPrefix: public
+#   verbose: true
+#   runtimeCaching:
+#     # CDNs - should be cacheFirst, since they should be used specific versions so should not change
+#     - urlPattern: /* # 如果你需要加載CDN資源，請配置該選項，如果沒有，可以不配置。
+#       handler: cacheFirst
+#       options:
+#         origin: http://datalearn.top/
+
+image_stream:
+  ## jquery: //cdn.bootcss.com/jquery/2.1.0/jquery.min.js
+  jquery: false
+  jquery_lazyload: //cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js
+  img_placeholder: //ww4.sinaimg.cn/large/e724cbefgw1etyppy7bgwg2001001017.gif
