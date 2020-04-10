@@ -1,6 +1,6 @@
 ---
-title: 时间轴
+title: 归档
 date: 2019-12-20 23:35:04
-type: "categories"
+type: "archives"
 top_img: /img/archive.jpg
 ---
