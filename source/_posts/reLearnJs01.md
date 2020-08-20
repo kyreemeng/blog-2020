@@ -1,5 +1,5 @@
 ---
-title: 重学JavaScript-js中的变量和数据类型
+title: 【重学JavaScript】js中的变量和数据类型
 date: 2020-08-16
 tags:
       - 编程
@@ -7,7 +7,6 @@ categories: JavaScript
 cover: http://img.datalearn.top/javascript.png
 ---
 
-## js中的变量和数据类型
 ###  变量
 > JavaScript中的变量(variable)可变的量，存储和代表不同值的东西
 
