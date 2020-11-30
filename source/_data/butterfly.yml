@@ -452,7 +452,6 @@ ClickShowText:
   enable: false
   text:
     - 本人
-    - 超帥
   fontSize: 15px
 
 # 網站顯示模式

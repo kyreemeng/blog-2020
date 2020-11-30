@@ -5,7 +5,7 @@ tags:
       - 编程
 categories: JavaScript
 cover: http://img.datalearn.top/javascript.png
----
+1. ---
 
 ###  变量
 > JavaScript中的变量(variable)可变的量，存储和代表不同值的东西
@@ -14,6 +14,8 @@ cover: http://img.datalearn.top/javascript.png
 // ES3语法
 var a  = 12;
 a = 13
+a = 'hello'  //变量赋值的时候，不写var 语句也是有效的
+console.log('a :>> ', a);  //'hello'
 // 输出a的代表值为13
 
 // ES6语法
@@ -253,4 +255,94 @@ console.log(person.weight) // '65kg'
 delete person[1];
 // 假删除：属性还在，值为空
 person.weight = null ;
+```
+
+#### Array数组特殊对象
+```js
+/*
+数组是特殊的对象
+1.我们中括号中设置的是属性值，它的属性名是默认生成的数字，
+从零开始递增，而且这个数字代表每一项的位置，我们把其称
+为 "索引" =》从零开始，连续递增，代表每一项位置的数字属性名
+2.天生默认一个属性名length，存储数组的长度
+*/
+let  array = [12,'哈哈',true,13]
+console.log(array.length)
+console.log(array['length'])
+//第一项索引0，最后一项索引array.length-1
+console.log(array[0)  //12
+console.log(array[array.length-1])  //13
+//向数组末尾追加内容
+array[array.length] = 100
+
+```
+###数据类型之间的区别
+ 
+```js
+let a  = 12;
+let b = a;
+b = 13
+console.log(a)  //12
+
+let n = {
+  name:'前端'
+}
+let  m = n;
+m.name = '学习'
+console.log(n.name)  //学习
+
+let n = [10,20]
+let  m = n;
+let x = m;
+m[0]=100
+x = [30,40];
+x[0] = 200;
+m = [50,60]
+m = x
+m[1] = 300
+n[2] = 400
+console.log(n,m,x) //[ 100, 20, 400 ] [ 200, 300 ] [ 200, 300 ]
+
+let a = {
+    n:1
+}
+let b = a;
+a.x = a = {
+    n:2 
+}
+console.log(a.x)  //undefined
+console.log(b)   // { n: 1, x: { n: 2 } }
+```
+
+基本类型：按值操作（直接操作的是值），所以也叫做值类型
+引用类型；操作的是堆内存的地址（按引用地址操作）
+### js数据类型的检测
+ - typeof[val]: 用来检测数据类型的运算符
+ - instanceof: 用来检测当前实例是否属于某个类
+ -  constructor: 基于构造函数检测数据类型（基于类的方式）
+ -  Object.prototype.toString.call(): 检测数据类型最好的办法
+ 
+ 
+```js
+/*
+基于typeof检测出来的结果
+1.首先是一个字符串
+2.字符串中包含对应的类型
+局限性
+1.typeof null=》"object"  但是null并不是对象
+2.基于typeof无法细分出当前值是普通对象还是数组对象等，
+因为只要是对象数据类型，返回结果都是‘object’
+*/
+console.log(typeof 1) ;  // 'number'
+let a = NaN
+console.log(typeof  a); //  'number'
+console.log(typeof  '12'); //   'string'
+console.log(typeof  true); //   'boolean'
+console.log(typeof  null); //   'object'
+console.log(typeof undefined); //   'undefined'
+console.log(typeof []); //   'object'
+console.log(typeof  function fn(){}); //   'function'
+
+//因为typeof检测的结果都是字符串，所以只要两个及以上同时检测，最后结果必然是'string'
+console.log(typeof typeof typeof []); //   'string'
 ```
